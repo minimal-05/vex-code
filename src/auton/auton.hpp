@@ -7,3 +7,4 @@ void autonomousRight();
 void autonomousRightMiddle();
 void autonomousAWP();
 void autonomousSkills();
+void autonomoustest();

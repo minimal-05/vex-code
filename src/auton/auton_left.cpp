@@ -17,8 +17,8 @@ void autonomousLeft() {
   conveyorPiston.set_value(true);
 
   // turn to middle goal, move to it, & score
-  chassis.turnToPoint(-11, 11, 500, { .forwards = false, .maxSpeed = 60, }, false);
-  chassis.moveToPoint(-11, 11, 1000, { .forwards = false, .maxSpeed = 70, }, false);
+  chassis.turnToPoint(-10, 10, 500, { .forwards = false, .maxSpeed = 60, }, false);
+  chassis.moveToPoint(-10, 10, 1000, { .forwards = false, .maxSpeed = 70, }, false);
   bottomIntake.move(0);
   fullIntake.move(127);
   pros::delay(2000);
@@ -27,17 +27,17 @@ void autonomousLeft() {
   conveyorPiston.set_value(false); // raise
 
   // move to goal & align, then run intake & score
-  chassis.moveToPoint(-47, 47, 1800, {.maxSpeed = 110}, false);
+  chassis.moveToPoint(-47, 47, 1800, {.maxSpeed = 80}, false);
   chassis.turnToPoint(-57, 47, 800, {.maxSpeed = 80}, false);
 
   // drop tongue, move to loader, intake
   bottomIntake.move(127);
   tonguePiston.set_value(false);
   pros::delay(400);
-  chassis.moveToPoint(-58, 47, 1500, {.maxSpeed = 70}, false);
+  chassis.moveToPoint(-58, 47, 2500, {.maxSpeed = 75}, false);
 
   // move to long goal & score
-  chassis.moveToPoint(-28, 47, 3000, {.forwards = false, .maxSpeed = 80}, true);
+  chassis.moveToPoint(-28, 47, 4000, {.forwards = false, .maxSpeed = 80}, true);
   pros::delay(1500);
   bottomIntake.move(0);
   fullIntake.move(127);
@@ -47,7 +47,7 @@ void autonomousLeft() {
   // wing
   chassis.moveToPoint(-39, 47, 1000, {.maxSpeed = 70}, false);
   chassis.turnToPoint(-32, 35, 600, {.forwards = false, .maxSpeed = 80}, false);
-  chassis.moveToPoint(-32, 35, 1500, {.forwards = false, .maxSpeed = 80}, false);
+  chassis.moveToPoint(-32, 35, 1500, {.forwards = false, .maxSpeed = 70}, false);
   chassis.turnToPoint(-7, 35, 600, {.forwards = false, .maxSpeed = 80}, false);
   chassis.moveToPoint(-7, 35, 3000, {.forwards = false, .maxSpeed = 80}, false);
 }

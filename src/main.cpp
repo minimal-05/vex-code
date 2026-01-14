@@ -3,7 +3,7 @@
 #include "auton/auton.hpp"
 #include "driver/driver.hpp"
 
-std::string autonSide = "right-middle";
+std::string autonSide = "right"; // right, right-middle, left, awp, skill, test
 
 void initialize() {
     pros::lcd::initialize();

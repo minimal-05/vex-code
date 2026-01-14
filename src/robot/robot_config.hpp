@@ -19,12 +19,10 @@ extern pros::MotorGroup fullIntake;
 
 // sensors
 extern pros::Imu imu;
-extern pros::Rotation horizontal_rotation_sensor;
 extern pros::Rotation vertical_rotation_sensor;
 
 // lemlib
 extern lemlib::Drivetrain drivetrain;
-extern lemlib::TrackingWheel horizontal_tracking_wheel;
 extern lemlib::TrackingWheel vertical_tracking_wheel;
 extern lemlib::OdomSensors sensors;
 extern lemlib::Chassis chassis;

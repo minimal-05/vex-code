@@ -18,7 +18,6 @@ pros::MotorGroup fullIntake({-12, -11});
 
 // sensors
 pros::Imu imu(19);
-pros::Rotation horizontal_rotation_sensor(16);
 pros::Rotation vertical_rotation_sensor(17);
 
 // drivetrain
@@ -32,25 +31,19 @@ lemlib::Drivetrain drivetrain(
 );
 
 // tracking wheels
-lemlib::TrackingWheel horizontal_tracking_wheel(
-    &horizontal_rotation_sensor,
-    lemlib::Omniwheel::NEW_2,
-    0
-);
 
 lemlib::TrackingWheel vertical_tracking_wheel(
     &vertical_rotation_sensor,
-    lemlib::Omniwheel::NEW_2,
+    lemlib::Omniwheel::NEW_275,
     1
 );
 
 // odometry
-lemlib::OdomSensors sensors(
-    &vertical_tracking_wheel,
-    nullptr,
-    &horizontal_tracking_wheel,
-    nullptr,
-    &imu
+lemlib::OdomSensors sensors(&vertical_tracking_wheel, // vertical tracking wheel 1, set to null
+                            nullptr, // vertical tracking wheel 2, set to nullptr as we are using IMEs
+                            nullptr, // horizontal tracking wheel 1
+                            nullptr, // horizontal tracking wheel 2, set to nullptr as we don't have a second one
+                            &imu // inertial sensor
 );
 
 // chassis

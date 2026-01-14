@@ -1,7 +1,7 @@
 #include "pid.hpp"
 
 lemlib::ControllerSettings lateral_controller(11, // proportional gain (kP)
-                                              0.0025, // integral gain (kI)
+                                              0.003, // integral gain (kI)
                                               60, // derivative gain (kD)
                                               3, // anti windup
                                               1, // small error range, in inches

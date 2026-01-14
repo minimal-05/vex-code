@@ -15,14 +15,14 @@ void autonomousRightMiddle() {
   bottomIntake.move(0);
 
   // turn to middle goal, move to it, & score
-  chassis.turnToPoint(-11.5, -11.5, 600, {.maxSpeed = 70}, false);
-  chassis.moveToPoint(-11.5, -11.5, 1000, {.maxSpeed = 60}, false);
+  chassis.turnToPoint(-11, -11, 600, {.maxSpeed = 80}, false);
+  chassis.moveToPoint(-11, -11, 1000, {.maxSpeed = 60}, false);
   bottomIntake.move(-127);
   pros::delay(1000);
   bottomIntake.move(0);
 
   // move to goal & align, then run intake & score
-  chassis.moveToPoint(-44, -47, 1800, {.forwards = false, .maxSpeed = 110}, true);
+  chassis.moveToPoint(-44, -47, 1400, {.forwards = false, .maxSpeed = 100}, true);
   bottomIntake.move(127);
   pros::delay(200);
   bottomIntake.move(0);
@@ -33,10 +33,10 @@ void autonomousRightMiddle() {
   bottomIntake.move(127);
   tonguePiston.set_value(false);
   pros::delay(400);
-  chassis.moveToPoint(-57, -47, 1600, {.maxSpeed = 70}, false);
+  chassis.moveToPoint(-57, -47, 2000, {.maxSpeed = 75}, false);
 
   // move to long goal & score
-  chassis.moveToPoint(-24, -47, 2700, {.forwards = false, .maxSpeed = 75}, true);
+  chassis.moveToPoint(-25, -47, 3000, {.forwards = false, .maxSpeed = 80}, true);
   pros::delay(1200);
   bottomIntake.move(0);
   fullIntake.move(127);
@@ -46,8 +46,8 @@ void autonomousRightMiddle() {
   // wing
   chassis.moveToPoint(-39, -47, 1000, {.maxSpeed = 70}, false);
   chassis.turnToPoint(-32, -59, 600, {.forwards = false, .maxSpeed = 80}, false);
-  chassis.moveToPoint(-32, -59, 1500, {.forwards = false, .maxSpeed = 80}, false);
+  chassis.moveToPoint(-32, -59, 1500, {.forwards = false, .maxSpeed = 70}, false);
   chassis.turnToPoint(-7, -59, 600, {.forwards = false, .maxSpeed = 80}, false);
-  chassis.moveToPoint(-7, -59, 3000, {.forwards = false, .maxSpeed = 80}, false);
+  chassis.moveToPoint(-7, -59, 3000, {.forwards = false, .maxSpeed = 70}, false);
 
 }
