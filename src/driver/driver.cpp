@@ -2,22 +2,31 @@
 #include "../robot/robot_config.hpp"
 
 void runDriver() {
-    int direction = -1;
-    bool lastX = false;
+    static int direction = -1;
+    static bool lastX = false;
 
-    bool tongueState = true;
-    bool conveyorState = false;
-    bool wingState = true;
+    static bool tongueState = false;
+    static bool conveyorState = false;
+    static bool wingState = true;
 
     while (true) {
         int leftY = controller.get_analog(pros::E_CONTROLLER_ANALOG_LEFT_Y);
         int rightX = controller.get_analog(pros::E_CONTROLLER_ANALOG_RIGHT_X);
 
+        // deadzone
         if (abs(rightX) < 10) rightX = 0;
-        rightX *= 0.68;
+        if (abs(leftY) < 10) leftY = 0;
 
-        chassis.curvature(leftY * direction, rightX);
+        // base turn sensitivity
+        //double baseTurn = 0.68;
+        //rightX *= baseTurn;
 
+        // apply inversion
+        leftY *= direction;
+
+        chassis.curvature(leftY, rightX);
+
+        // intake controls
         if (controller.get_digital(pros::E_CONTROLLER_DIGITAL_RIGHT)) {
             bottomIntake.move(127);
         } else if (controller.get_digital(pros::E_CONTROLLER_DIGITAL_Y)) {
@@ -31,6 +40,7 @@ void runDriver() {
             bottomIntake.move(0);
         }
 
+        // pistons
         if (controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_A)) {
             conveyorState = !conveyorState;
             conveyorPiston.set_value(conveyorState);
@@ -46,8 +56,11 @@ void runDriver() {
             wingPiston.set_value(wingState);
         }
 
+        // invert throttle button (X)
         bool xPressed = controller.get_digital(pros::E_CONTROLLER_DIGITAL_X);
-        if (xPressed && !lastX) direction = -direction;
+        if (xPressed && !lastX) {
+            direction = -direction;
+        }
         lastX = xPressed;
 
         pros::delay(25);

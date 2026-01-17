@@ -9,5 +9,5 @@ void runAuton() {
   else if (autonSide == "right-middle") autonomousRightMiddle();
   else if (autonSide == "awp") autonomousAWP();
   else if (autonSide == "skill") autonomousSkills();
-  else if (autonSide == "test") autonomoustest();
+  else if (autonSide == "test") autonomousTest();
 }

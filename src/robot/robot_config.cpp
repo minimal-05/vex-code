@@ -5,7 +5,7 @@
 pros::Controller controller(pros::E_CONTROLLER_MASTER);
 
 // pistons
-pros::adi::DigitalOut tonguePiston('B', false);
+pros::adi::DigitalOut tonguePiston('B', true);
 pros::adi::DigitalOut conveyorPiston('C', false);
 pros::adi::DigitalOut wingPiston('A', true);
 
@@ -18,7 +18,7 @@ pros::MotorGroup fullIntake({-12, -11});
 
 // sensors
 pros::Imu imu(19);
-pros::Rotation vertical_rotation_sensor(17);
+pros::Rotation vertical_rotation_sensor(-17);
 
 // drivetrain
 lemlib::Drivetrain drivetrain(
@@ -35,7 +35,7 @@ lemlib::Drivetrain drivetrain(
 lemlib::TrackingWheel vertical_tracking_wheel(
     &vertical_rotation_sensor,
     lemlib::Omniwheel::NEW_275,
-    1
+    -1
 );
 
 // odometry

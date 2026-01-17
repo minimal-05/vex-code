@@ -9,7 +9,6 @@ void fromtheside() {
 
   // move to ball
   bottomIntake.move(127);
-  tonguePiston.set_value(true);
   pros::delay(200);
   chassis.moveToPoint(-63, 0, 7000, {.maxSpeed = 40}, false);
   chassis.turnToPoint(-61, 20, 300, {.maxSpeed = 60}, false);
@@ -26,26 +25,24 @@ void fromtheside() {
 void fromthefront() {
 
   // set starting position for middle
-  chassis.setPose(-56, 0, 270);
+  chassis.setPose(-45.5, 0, 270);
   tonguePiston.set_value(true); // lifts tongue
   conveyorPiston.set_value(false);
 
   // move to ball
   bottomIntake.move(127);
-  chassis.moveToPoint(-62, 0, 7000, {.maxSpeed = 40}, false);
-  chassis.moveToPoint(-40, 0, 4000, {.forwards = false, .maxSpeed = 70}, false);
+  chassis.moveToPoint(-62, 0, 5000, {.maxSpeed = 40}, false);
+  chassis.moveToPoint(-58, 0, 1000, {.forwards = false, .maxSpeed = 40}, false);
 
   // move to middle goal
-  bottomIntake.move(0);
-  chassis.turnToPoint(-18.495, 18.495, 500, {.maxSpeed = 60}, false);
-  chassis.moveToPoint(-18.495, 18.495, 2500, {.maxSpeed = 70}, false);
-  chassis.turnToPoint(-13, 13, 500, {.forwards = false, .maxSpeed = 60}, false);
+  chassis.moveToPoint(-62, 0, 2500, {.maxSpeed = 40}, false);
+  chassis.moveToPoint(-43, 0, 2500, {.forwards = false, .maxSpeed = 40}, false);
 
 }
 
 void autonomousSkills() {  // need the odometry to not get stuck
 
-  fromtheside();
+  fromthefront();
   
   // pull down piston
   conveyorPiston.set_value(true);
