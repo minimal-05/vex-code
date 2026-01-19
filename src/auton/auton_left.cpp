@@ -14,9 +14,9 @@ void autonomousLeft() {
   chassis.moveToPoint(-22.5, 22.5, 1800, {.maxSpeed = 50}, false);
  
   // turn to middle goal, move to it, & score
-  chassis.turnToPoint(-7, 7, 500, { .forwards = false, .maxSpeed = 60, }, false);
+  chassis.turnToPoint(-6, 6, 500, { .forwards = false, .maxSpeed = 60, }, false);
   bottomIntake.move(0);
-  chassis.moveToPoint(-7, 7, 1000, { .forwards = false, .maxSpeed = 70, }, false);
+  chassis.moveToPoint(-6, 6, 1000, { .forwards = false, .maxSpeed = 70, }, false);
   conveyorPiston.set_value(true);
   bottomIntake.move(-127);
   pros::delay(50);
