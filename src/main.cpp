@@ -3,11 +3,12 @@
 #include "auton/auton.hpp"
 #include "driver/driver.hpp"
 
-std::string autonSide = "awp"; // right, right-middle, left, awp, skill, test
+std::string autonSide = "skill"; // right, right-middle, left, awp, skill, test
 
 void initialize() {
     pros::lcd::initialize();
     chassis.calibrate();
+    tonguePiston.set_value(true);
 }
 
 void autonomous() {
