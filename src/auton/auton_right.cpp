@@ -6,7 +6,7 @@ void autonomousRight() {
   // set starting position on right side
   chassis.setPose(-48.36, -16.2, 103.692);
   tonguePiston.set_value(true); // lifts tongue
-  conveyorPiston.set_value(false);
+  // lastX = false;
 
   // collect 3 middle balls (storage)
   bottomIntake.move(127);
@@ -33,10 +33,10 @@ void autonomousRight() {
   fullIntake.move(0);
 
   // wing
-  chassis.moveToPoint(-39, -47, 800, {.maxSpeed = 80}, false);
-  chassis.turnToPoint(-32, -56.75, 500, {.forwards = false, .maxSpeed = 80}, false);
-  chassis.moveToPoint(-32, -56.75, 1200, {.forwards = false, .maxSpeed = 70}, false);
-  chassis.turnToPoint(-7, -56.75, 500, {.forwards = false, .maxSpeed = 80}, false);
-  chassis.moveToPoint(-7, -56.75, 3000, {.forwards = false, .maxSpeed = 80}, false);
+  chassis.moveToPoint(-39, -47, 600, {.maxSpeed = 80}, false);
+  chassis.turnToPoint(-32, -56.75, 300, {.forwards = false, .maxSpeed = 80}, false);
+  chassis.moveToPoint(-32, -56.75, 800, {.forwards = false, .maxSpeed = 80}, false);
+  chassis.turnToPoint(-7, -56.75, 300, {.forwards = false, .maxSpeed = 80}, false);
+  chassis.moveToPoint(-7, -56.75, 3000, {.forwards = false, .maxSpeed = 70}, false);
   
 }
