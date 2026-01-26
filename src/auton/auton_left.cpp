@@ -37,7 +37,8 @@ void autonomousLeft() {
   // move to loader, intake
   bottomIntake.move(127);
   pros::delay(300);
-  chassis.moveToPoint(-58, 47, 1200, {.maxSpeed = 85}, false);
+  chassis.moveToPoint(-58, 47, 500, {.maxSpeed = 85}, false);
+  pros::delay(700);
 
   // move to long goal & score
   chassis.moveToPoint(-24, 47, 3000, {.forwards = false, .maxSpeed = 80}, true);
