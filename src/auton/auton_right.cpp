@@ -17,13 +17,12 @@ void autonomousRight() {
   // move to goal & align, then run intake & score
   chassis.turnToPoint(-47, -47, 500, { .maxSpeed = 80}, false);
   chassis.moveToPoint(-47, -47, 1600, { .maxSpeed = 90}, false);
-  chassis.turnToPoint(-58, -47, 800, {.maxSpeed = 80}, false);
+  chassis.turnToPoint(-59, -47, 800, {.maxSpeed = 80}, false);
 
   // move to loader, intake
   bottomIntake.move(127);
   pros::delay(400);
-  chassis.moveToPoint(-58, -47, 500, {.maxSpeed = 80}, false);
-  pros::delay(700);
+  chassis.moveToPoint(-59, -47, 1100, {.maxSpeed = 80}, false);
 
   // move to long goal & score
   chassis.moveToPoint(-24, -47, 4000, {.forwards = false, .maxSpeed = 80}, true);
