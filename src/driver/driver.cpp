@@ -5,9 +5,9 @@ void runDriver() {
     static int direction = -1;
     static bool lastX = false;
 
-    static bool tongueState = false;
+    static bool tongueState = true;
     static bool conveyorState = false;
-    static bool wingState = true;
+    static bool wingState = false;
 
     while (true) {
         int leftY = controller.get_analog(pros::E_CONTROLLER_ANALOG_LEFT_Y);

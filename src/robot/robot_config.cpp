@@ -7,7 +7,7 @@ pros::Controller controller(pros::E_CONTROLLER_MASTER);
 // pistons
 pros::adi::DigitalOut tonguePiston('B', true);
 pros::adi::DigitalOut conveyorPiston('C', false);
-pros::adi::DigitalOut wingPiston('A', true);
+pros::adi::DigitalOut wingPiston('A', false);
 
 // motors
 pros::MotorGroup left_mg({15, -14, -13}, pros::MotorGearset::blue);
