@@ -67,7 +67,7 @@ void middle() {
 
 }
 
-void middlegoal() {
+void otherpark() {
   
   // clear zone and pick up
   chassis.moveToPoint(55, 47, 500, {.maxSpeed = 80}, false);
@@ -205,5 +205,10 @@ void autonomousSkills() {
   pros::delay(4000);
   tonguePiston.set_value(true);
   fullIntake.move(0);
+
+  // parking test implementation
+  chassis.moveToPoint(-45, -47, 800, {.maxSpeed = 80}, false);
+  chassis.turnToPoint(-65.5, 1.5, 600 {.maxSpeed = 80}, false);
+  chassis.moveToPoint(-65.5, 1.5, 2500 {.maxSpeed = 70}, false);
 
 }
