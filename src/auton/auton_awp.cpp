@@ -10,11 +10,11 @@ void autonomousAWP() {
 
   // move to tube
   chassis.moveToPoint(-47, -47, 900, {.maxSpeed = 90}, false);
-  chassis.turnToPoint(-59, -47, 350, {.maxSpeed = 80}, false);
+  chassis.turnToPoint(-60, -47, 350, {.maxSpeed = 80}, false);
   tonguePiston.set_value(false);
   pros::delay(300);
   bottomIntake.move(127);
-  chassis.moveToPoint(-59, -47, 800, {.maxSpeed = 80}, false);
+  chassis.moveToPoint(-60, -47, 800, {.maxSpeed = 80}, false);
 
   // move to long goal and score
   chassis.moveToPoint(-24, -47, 2000, {.forwards = false, .maxSpeed = 90}, true);
@@ -53,9 +53,9 @@ void autonomousAWP() {
   //move to other tube
   conveyorPiston.set_value(false);
   chassis.moveToPoint(-47, 47, 1400, {.maxSpeed = 90}, false);
-  chassis.turnToPoint(-59, 47, 400, {.maxSpeed = 80}, false);
+  chassis.turnToPoint(-60, 47, 400, {.maxSpeed = 80}, false);
   bottomIntake.move(127);
-  chassis.moveToPoint(-59, 47, 800, {.maxSpeed = 80}, false);
+  chassis.moveToPoint(-60, 47, 800, {.maxSpeed = 80}, false);
 
   // move to long goal and score
   chassis.moveToPoint(-23, 47, 3500, {.forwards = false, .maxSpeed = 90}, true);

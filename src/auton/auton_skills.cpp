@@ -103,7 +103,7 @@ void otherpark() {
   chassis.moveToPoint(47, -47, 1400, {.maxSpeed = 90}, false);
   chassis.turnToPoint(59, -47, 400, {.maxSpeed = 80}, false);
   bottomIntake.move(127);
-  chassis.moveToPoint(59, -47, 3000, {.maxSpeed = 80}, false);
+  chassis.moveToPoint(60, -47, 3000, {.maxSpeed = 70}, false);
 
 }
 
@@ -114,7 +114,7 @@ void nexttube() {
   chassis.moveToPoint(44, -47, 3000, {.maxSpeed = 100}, false);
   chassis.turnToPoint(59, -47, 400, {.maxSpeed = 80}, false);
   bottomIntake.move(127);
-  chassis.moveToPoint(59, -47, 3000, {.maxSpeed = 80}, false);
+  chassis.moveToPoint(60, -47, 3000, {.maxSpeed = 70}, false);
 }
 
 void autonomousSkills() {  
@@ -125,12 +125,12 @@ void autonomousSkills() {
   // move to goal & align
   bottomIntake.move(127);
   chassis.moveToPoint(-47, 47, 1800, {.maxSpeed = 90}, false);
-  chassis.turnToPoint(-59, 47, 700, {.maxSpeed = 80}, false);
+  chassis.turnToPoint(-60, 47, 700, {.maxSpeed = 80}, false);
 
   // drop tongue, move to loader, intake
   tonguePiston.set_value(false);
   pros::delay(400);
-  chassis.moveToPoint(-59, 47, 3000, {.maxSpeed = 70}, false);
+  chassis.moveToPoint(-60, 47, 3000, {.maxSpeed = 70}, false);
   
   // move to other side
   chassis.moveToPoint(-47, 47, 800, {.forwards = false, .maxSpeed = 90}, false);
@@ -155,7 +155,7 @@ void autonomousSkills() {
 
   // move to loader, intake
   bottomIntake.move(127);
-  chassis.moveToPoint(59, 47, 3000, {.maxSpeed = 70}, false);
+  chassis.moveToPoint(60, 47, 3000, {.maxSpeed = 70}, false);
   
   // move to long goal & score
   chassis.moveToPoint(24, 47, 700, {.forwards = false, .maxSpeed = 80}, false);
@@ -167,7 +167,7 @@ void autonomousSkills() {
   tonguePiston.set_value(true);
   fullIntake.move(0);
 
-  // middlegoal();
+  // otherpark();
   nexttube();
   
   
@@ -194,7 +194,7 @@ void autonomousSkills() {
 
   // move to loader, intake
   bottomIntake.move(127);
-  chassis.moveToPoint(-59, -47, 3000, {.maxSpeed = 70}, false);
+  chassis.moveToPoint(-60, -47, 3000, {.maxSpeed = 70}, false);
 
   // move to long goal & score
   chassis.moveToPoint(-24, -47, 700, {.forwards = false, .maxSpeed = 80}, false);
@@ -208,7 +208,7 @@ void autonomousSkills() {
 
   // parking test implementation
   chassis.moveToPoint(-45, -47, 800, {.maxSpeed = 80}, false);
-  chassis.turnToPoint(-65.5, 1.5, 600 {.maxSpeed = 80}, false);
-  chassis.moveToPoint(-65.5, 1.5, 2500 {.maxSpeed = 70}, false);
+  chassis.turnToPoint(-65.5, 1.5, 600, {.maxSpeed = 80}, false);
+  chassis.moveToPoint(-65.5, 1.5, 2500, {.maxSpeed = 70}, false);
 
 }
