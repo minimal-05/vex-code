@@ -10,7 +10,7 @@ void autonomousRight() {
 
   // collect 3 middle balls (storage)
   bottomIntake.move(127);
-  chassis.moveToPoint(-22.5, -22.5, 2000, {.maxSpeed = 90}, false);
+  chassis.moveToPoint(-22.5, -22.5, 2000, {.maxSpeed = 90}, true);
   pros::delay(400);
   tonguePiston.set_value(false);
 
@@ -22,7 +22,7 @@ void autonomousRight() {
   // move to loader, intake
   bottomIntake.move(127);
   pros::delay(400);
-  chassis.moveToPoint(-60, -47, 1100, {.maxSpeed = 80}, false);
+  chassis.moveToPoint(-60, -47, 1200, {.maxSpeed = 85}, false);
 
   // move to long goal & score
   chassis.moveToPoint(-24, -47, 4000, {.forwards = false, .maxSpeed = 80}, true);
